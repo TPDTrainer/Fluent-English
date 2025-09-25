@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindset & English Speaking Workshop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Soothing & Trustworthy -->
+    <!-- Application Structure Plan: The application is structured as a top-to-bottom persuasive sales funnel, guiding the user through a narrative journey. It starts with a strong Hook (Attention), moves to agitating a Problem the user faces (Interest), presents the workshop as the Solution (Desire), builds trust with Social Proof and Authority, and culminates in a clear Offer and Call to Action (Action). An FAQ section handles final objections. This linear, narrative structure was chosen over a complex dashboard because it is the most effective method for converting visitors into participants on a single-purpose landing page. It eliminates distractions and builds momentum towards the conversion goal: signing up for the workshop. -->
+    <!-- Visualization & Content Choices: 
+        - Hook: Goal=Inform, Method=Large Headline (HTML/CSS), Interaction=Button with smooth scroll to CTA. Justification=Immediately grabs attention and provides a clear path to conversion.
+        - Problem List: Goal=Organize, Method=Bulleted List with Icons (HTML/CSS). Justification=Easily scannable presentation of user pain points.
+        - How It Works: Goal=Organize, Method=3-Column Layout with Icons (HTML/CSS). Justification=Simplifies the transformation process into digestible steps.
+        - Testimonials: Goal=Organize/Inform, Method=Styled "Card" components (HTML/CSS). Justification=Clean, credible presentation of social proof.
+        - Satisfaction Chart: Goal=Inform, Viz=Donut Chart, Interaction=Tooltip on hover, Library=Chart.js/Canvas. Justification=A data-driven visual to quickly communicate high student satisfaction, building trust more effectively than text alone.
+        - The Offer/CTA: Goal=Organize, Method=Numbered List (HTML/CSS), Interaction=Clickable WhatsApp button. Justification=Provides an unambiguous, step-by-step guide to register, minimizing friction.
+        - FAQ: Goal=Organize, Method=Accordion (HTML/CSS/JS), Interaction=Click to expand/collapse. Justification=Keeps the page tidy while addressing potential user doubts on demand.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF8F0; /* Warm Neutral Background */
+        }
+        .text-brand-dark { color: #2C3E50; }
+        .text-brand-accent { color: #E74C3C; }
+        .bg-brand-primary { background-color: #3498DB; } /* Calming Blue */
+        .bg-brand-primary-light { background-color: #EBF5FB; }
+        .bg-brand-secondary { background-color: #F9EBEA; }
+        .border-brand-primary { border-color: #3498DB; }
+        .shadow-brand { box-shadow: 0 10px 15px -3px rgba(52, 152, 219, 0.1), 0 4px 6px -2px rgba(52, 152, 219, 0.05); }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body class="text-brand-dark antialiased">
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section 1: The Hook -->
+        <section class="text-center py-20 sm:py-24">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                Unlock Fluent English & <span class="text-brand-accent">Unstoppable Confidence</span> This Weekend
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-600">
+                Join my live, interactive weekend workshop designed to crush your speaking fears and build a powerful growth mindset. Pay what you feel is right.
+            </p>
+            <div class="mt-10">
+                <button id="joinButton" class="bg-brand-primary text-white font-bold py-3 px-8 rounded-full text-lg shadow-brand hover:opacity-90 transition-opacity">
+                    Join The Workshop Now
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 2: Problem & Agitation -->
+        <section class="py-16 sm:py-20 bg-brand-secondary rounded-2xl">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold">Do You Freeze Up When You Need to Speak?</h2>
+                <p class="mt-4 text-lg text-gray-600">If you feel stuck, you're not alone. Many brilliant people face these same silent struggles.</p>
+                <div class="mt-8 text-left inline-block">
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span>Fear of making embarrassing mistakes?</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span>Frustrated that you understand but can't speak fluently?</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span>Feeling your career is stalled by your communication skills?</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span>Tired of generic courses that don't deliver real confidence?</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Solution -->
+        <section class="py-20 sm:py-24">
+            <div class="text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold">Your 3-Step Path to Confidence</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">This isn't another boring grammar lesson. It's a transformational experience designed for rapid, lasting results.</p>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold mb-2">Master Your Mindset</h3>
+                    <p class="text-gray-600">We start by destroying the mental blocks, perfectionism, and fear that have been holding you back for years.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">🗣️</div>
+                    <h3 class="text-xl font-bold mb-2">Practice Practical English</h3>
+                    <p class="text-gray-600">Engage in real, guided conversations and practical activities that you'll actually use in your job and daily life.</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold mb-2">Build Unshakable Confidence</h3>
+                    <p class="text-gray-600">Leave the workshop with proven techniques to speak your mind clearly and effectively in any situation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Social Proof -->
+        <section class="py-16 sm:py-20 bg-brand-primary-light rounded-2xl">
+            <div class="text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold">What My Students Achieve</h2>
+                 <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">This workshop empowers professionals to break through their barriers. Here's what they say.</p>
+            </div>
+            <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <p class="text-gray-600 italic">"I never thought I could speak in a team meeting without a script. After this workshop, I led a presentation. The focus on mindset was the key. Thank you!"</p>
+                        <p class="mt-4 font-bold">- Priya S., Software Engineer</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <p class="text-gray-600 italic">"For years, I avoided calls with international clients. The practical conversation sessions gave me the tools I needed. It's been a career-changing experience."</p>
+                        <p class="mt-4 font-bold">- Rajesh K., Project Manager</p>
+                    </div>
+                </div>
+                <div class="mt-8 lg:mt-0">
+                    <div class="chart-container">
+                        <canvas id="satisfactionChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-lg font-medium text-gray-700">95% Student Satisfaction Rate</p>
+                    <p class="text-center text-gray-600">Based on post-workshop surveys.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The Offer & CTA -->
+        <section id="join" class="py-20 sm:py-24 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold">Ready to Transform Your Life?</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">This workshop is 'Pay As You Wish' because I believe everyone deserves access to this transformation. Follow these simple steps to join.</p>
+            
+            <div class="mt-12 max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <h3 class="text-2xl font-bold mb-6">How to Join The Workshop</h3>
+                <div class="text-left space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-brand-primary text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">1</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Contribute via UPI</h4>
+                            <p class="text-gray-600">Pay what you honestly feel the workshop is worth to you. Your contribution helps me continue this mission.
+                            <strong class="block mt-1 text-brand-dark bg-gray-100 p-2 rounded">your-upi-id@oksbi</strong></p>
+                        </div>
+                    </div>
+                     <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-brand-primary text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">2</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Take a Screenshot</h4>
+                            <p class="text-gray-600">Save a screenshot of the successful payment confirmation.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-brand-primary text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">3</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Send it on WhatsApp</h4>
+                            <p class="text-gray-600">Click the link below and send me the screenshot. I will personally reply with the private link for this weekend's workshop!</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer" class="mt-8 inline-block bg-green-500 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:bg-green-600 transition-colors">
+                    Send Screenshot on WhatsApp
+                </a>
+                 <p class="mt-2 text-sm text-gray-500">My Number: +91 123 456 7890</p>
+            </div>
+        </section>
+
+        <!-- Section 6: FAQ -->
+        <section class="py-16 sm:py-20 max-w-3xl mx-auto">
+            <h2 class="text-center text-3xl sm:text-4xl font-bold mb-10">Frequently Asked Questions</h2>
+            <div class="space-y-4" id="faq-container">
+                <div class="faq-item bg-white rounded-lg shadow-sm">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-lg">
+                        <span>Who is this workshop for?</span>
+                        <span class="faq-icon transition-transform transform">+</span>
+                    </button>
+                    <div class="faq-answer hidden p-5 border-t border-gray-200">
+                        <p class="text-gray-600">This is for any student, working professional, or entrepreneur who feels their English speaking skills or confidence is holding them back in their career or personal life. If you feel fear or hesitation when you speak, this is for you.</p>
+                    </div>
+                </div>
+                 <div class="faq-item bg-white rounded-lg shadow-sm">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-lg">
+                        <span>Is it really 'Pay as you wish'? What's the catch?</span>
+                        <span class="faq-icon transition-transform transform">+</span>
+                    </button>
+                    <div class="faq-answer hidden p-5 border-t border-gray-200">
+                        <p class="text-gray-600">There is absolutely no catch. I believe this knowledge should be accessible to everyone who is committed to improving. I trust you to contribute what is a fair value for you. Your honest support allows me to offer this unique model to more people.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-lg shadow-sm">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-lg">
+                        <span>What technology do I need?</span>
+                        <span class="faq-icon transition-transform transform">+</span>
+                    </button>
+                    <div class="faq-answer hidden p-5 border-t border-gray-200">
+                        <p class="text-gray-600">All you need is a smartphone or computer with a stable internet connection and the Zoom application installed. The session is live and interactive, so a working microphone is highly recommended.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 border-t border-gray-200 mt-12">
+        <p class="text-gray-500">&copy; 2025 Your Name - Mindset & English Speaking Trainer.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const joinButton = document.getElementById('joinButton');
+            const joinSection = document.getElementById('join');
+
+            joinButton.addEventListener('click', () => {
+                joinSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            const faqContainer = document.getElementById('faq-container');
+            faqContainer.addEventListener('click', function(e) {
+                const questionButton = e.target.closest('.faq-question');
+                if (questionButton) {
+                    const item = questionButton.parentElement;
+                    const answer = item.querySelector('.faq-answer');
+                    const icon = questionButton.querySelector('.faq-icon');
+
+                    const isOpening = answer.classList.contains('hidden');
+                    
+                    document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
+                    document.querySelectorAll('.faq-icon').forEach(icn => {
+                        icn.textContent = '+';
+                        icn.classList.remove('rotate-45');
+                    });
+                    
+                    if (isOpening) {
+                        answer.classList.remove('hidden');
+                        icon.textContent = '-';
+                        icon.classList.add('rotate-45');
+                    }
+                }
+            });
+
+            const ctx = document.getElementById('satisfactionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Satisfied Students', 'Other'],
+                    datasets: [{
+                        label: 'Student Satisfaction',
+                        data: [95, 5],
+                        backgroundColor: [
+                            '#3498DB', // Calming Blue
+                            '#EAECEE'
+                        ],
+                        borderColor: [
+                            '#FFFFFF',
+                            '#FFFFFF'
+                        ],
+                        borderWidth: 4,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                             callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
